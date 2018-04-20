@@ -1,29 +1,30 @@
 import React, { Component } from "react";
-import "bulma/css/bulma.css";
 import "./App.css";
 import Calendar from "rc-calendar";
 import Clock from "react-live-clock";
-import Loading from "./components/Loading";
+import Weather from "./components/Weather";
+import News from "./components/News";
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      data: []
+      weatherData: []
     };
   }
 
   fetchData() {
     const url =
-      "http://192.168.1.104:5984/sami_books/_design/bookDesignDocs/_view/getBooks?descending=true";
+      "https://api.openweathermap.org/data/2.5/weather?q=Helsinki&APPID=a30f70eec1e3c0df56e4cf777944dd52&units=metric";
 
     fetch(url, {
       method: "GET"
     })
       .then(result => result.json())
       .then(result => {
+        console.log("Fetched weatherData");
         this.setState({
-          data: result
+          weatherData: result
         });
       })
       .catch(err => {
@@ -38,22 +39,22 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="container is-fluid">
-          <div className="columns is-multiline is-mobile">
-            <div className="column has-text-centered is-one-quarter is-warning clock">
-              <Clock className="title" format={"HH:mm:ss"} ticking={true} />
+        <div className="flex-column center-items">
+          <div className="flex-row">
+            <div className="flex-cell clock">
+              <Clock format={"HH:mm:ss"} ticking={true} />
             </div>
-            <div className="column is-one-quarter is-primary">
+            <div className="flex-cell center-items">
               <Calendar style={{ margin: "10px" }} />
             </div>
-            <div className="column is-half is-danger">UUTISIA :D</div>
-            <div className="column is-half is-success">HUUTISTA</div>
-            <div className="column is-one-quarter">YRJISTÄ :D</div>
-            <div className="column is-one-quarter">KAATISTA :D</div>
-            <div className="column is-one-quarter">
-              <code>is-one-quarter</code>
+            <div className="flex-cell center-items weather">
+              <Weather weather={this.state.weatherData} />
             </div>
-            <div className="column">Auto</div>
+          </div>
+          <div className="flex-row">
+            <div className="flex-cell center-items">
+              <News news="UUTISIA SAMI?" />
+            </div>
           </div>
         </div>
       </div>

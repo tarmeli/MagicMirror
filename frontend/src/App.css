@@ -1,12 +1,139 @@
-.container {
-  margin: 10px;
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans|Poiret+One");
+
+body {
+  /* font-family: "Josefin Sans", sans-serif; */
+  font-family: "Poiret One", cursive;
+  font-size: 22px;
+  background-color: #dfdbdb;
+  color: #2e2e3a;
 }
-.column {
-  background-color: ghostwhite;
-  box-shadow: gainsboro 5px 5px 5px;
+
+.title {
+  font-size: 45px;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.rc-calendar {
+  outline: none;
+}
+
+.rc-calendar-cell {
+  cursor: pointer;
+}
+
+.rc-calendar-selected-date {
+  background-color: salmon;
+}
+
+.rc-calendar-footer {
+  text-align: center;
+}
+
+.rc-calendar-today-btn {
+  cursor: pointer;
+  display: none;
+}
+
+.rc-calendar-my-select {
+  cursor: pointer;
+}
+
+.rc-calendar-month-panel-month {
+  cursor: pointer;
+}
+
+.rc-calendar-month-panel-body {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.rc-calendar-year-panel-year {
+  cursor: pointer;
+}
+
+.rc-calendar-year-panel-decade-select-content {
+  cursor: pointer;
+}
+
+.rc-calendar-month-panel-year-select-content {
+  cursor: pointer;
+}
+
+.rc-calendar-year-panel-body {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.rc-calendar-year-select {
+  margin-left: 2px;
+}
+
+.rc-calendar-month-select {
+  margin-right: 2px;
+}
+
+.rc-calendar-header {
+  text-align: center;
+  margin: 10px;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.rc-calendar-date {
+  text-align: center;
+  padding: 10px;
+  border: solid 1px;
+}
+
+.rc-calendar-input {
+  width: 100%;
+  font-family: "Poiret One", cursive;
+  font-size: 20px;
+  outline: none;
+  border-radius: 3px;
+  border: solid 1px;
+  display: none;
+}
+
+.rc-calendar-today {
+  background-color: #2e2e3a;
+  color: #f8f8f2;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.center-items {
+  justify-content: center;
+}
+
+.flex-row {
+  display: inline-flex;
+  flex-direction: row;
+}
+
+.flex-cell {
+  padding: 10px;
+  display: flex;
+  margin: 10px;
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px;
+  background-color: #ffffff;
+  font-weight: bold;
+}
+
+.weather {
+  justify-content: center;
+  align-items: center;
 }
 
 .clock {
-  display: flex;
   justify-content: center;
+  align-items: center;
+  font-size: 45px;
+  font-family: "Josefin Sans", sans-serif;
 }
