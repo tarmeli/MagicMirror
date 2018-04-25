@@ -126,6 +126,11 @@ body {
   font-weight: bold;
 }
 
+.flex-cell:only-child {
+  width: 100%;
+  background-color: #ffffff;
+}
+
 .weather {
   justify-content: center;
   align-items: center;
@@ -135,5 +140,26 @@ body {
   justify-content: center;
   align-items: center;
   font-size: 45px;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+@media (max-width: 780px) {
+  .flex-row {
+    flex-flow: wrap;
+  }
+}
+
+.slide {
+  background: #ffffff !important;
+}
+
+.carousel-container {
+  width: 100%;
+  max-width: 100%;
+}
+
+.news {
+  max-width: 97.1%;
+  font-size: 2rem;
   font-family: "Josefin Sans", sans-serif;
 }
