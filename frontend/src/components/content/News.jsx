@@ -7,6 +7,14 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 class ConnectedNews extends Component {
   componentDidMount() {
     this.props.dispatch(fetchNews());
+    this.interval = setInterval(() => {
+      console.log("refetching news");
+      this.props.dispatch(fetchNews());
+    }, 1800000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
   }
 
   renderCarousel() {
@@ -23,11 +31,9 @@ class ConnectedNews extends Component {
         infiniteLoop={true}
         autoPlay={true}
       >
-        {this.props.loading === true || this.props.news == null
-          ? "Loading"
-          : this.props.news.articles.map((article, key) => {
-              return <div key={key}>{article.title}</div>;
-            })}
+        {this.props.news.articles.map((article, key) => {
+          return <div key={key}>{article.title}</div>;
+        })}
       </Carousel>
     );
   }

@@ -15,7 +15,6 @@ export const fetchNews = () => {
       .then(handleErrors)
       .then(res => res.json())
       .then(json => {
-        console.log("json in fetch", json);
         dispatch(fetchNewsSuccess(json));
         return json;
       })

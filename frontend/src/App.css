@@ -151,6 +151,9 @@ body {
 
 .slide {
   background: #ffffff !important;
+  display: flex;
+  justify-items: center;
+  align-content: center;
 }
 
 .carousel-container {
@@ -162,4 +165,10 @@ body {
   max-width: 97.1%;
   font-size: 2rem;
   font-family: "Josefin Sans", sans-serif;
+}
+
+.updated {
+  box-shadow: none;
+  color: #a09e9e;
+  font-size: 0.9rem;
 }

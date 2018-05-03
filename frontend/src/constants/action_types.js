@@ -10,7 +10,6 @@ export const fetchWeatherBegin = () => ({
 });
 
 export const fetchWeatherSuccess = weather => {
-  console.log("fetched weather succesfully");
   return {
     type: FETCH_WEATHER_SUCCESS,
     payload: { weather }
@@ -27,7 +26,6 @@ export const fetchNewsBegin = () => ({
 });
 
 export const fetchNewsSuccess = news => {
-  console.log("fetched news succesfully");
   return {
     type: FETCH_NEWS_SUCCESS,
     payload: { news }
